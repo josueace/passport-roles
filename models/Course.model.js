@@ -11,7 +11,12 @@ const courseSchema = new Schema(
     courseImg: String,
     description: String,
     status: { type: String, enum: ['ON', 'OFF'] },
-    students: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    students: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    role: {
+      type: String,
+      enum : ['BOSS', 'DEV', 'TA','STUDENT','GUEST'],
+      default : 'GUEST'
+    }
   },
   {
     timestamps: true

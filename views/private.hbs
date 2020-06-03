@@ -1,0 +1,13 @@
+<h2>Found it</h2>
+{{#each devs}}
+<div>
+    <h3>{{this.role}}</h3>
+   <p> {{this.username}}</p>
+   
+   <form action="/edit/{{this._id}}" method="GET">
+       <input type="text" name="role" value="{{this.role}}">
+        <button type="submit">edit</button>
+   </form>
+   <a href='delete/{{this._id}}'><button>delete</button></a>
+</div>            
+{{/each}}
